@@ -1,0 +1,511 @@
+{% extends 'mamazon/base.html' %}
+{% load static %}
+
+
+{% block body %}
+
+<div class="span9">
+    <ul class="breadcrumb">
+        <li> <a href="index.html">ホーム</a> <span class="divider"> / </span> </li>
+        <li> <a href="products.html">製品</a> <span class="divider"> / </span> </li>
+        <li class="active">製品の詳細</li>
+    </ul>
+    <div class="row">
+        <div id="gallery" class="span3">
+            <a href="{{ object.thumbnail.url }}" title="{{ object.name }}">
+                <img src="{{object.thumbnail.url}}" style="width=100" alt="Fujifilm FinePix S2950デジタルカメラ" />
+            </a>
+            <div id="differentview" class="moreOptopmカルーセルスライド">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <a href="themes/images/products/large/f1.jpg"> <img style="width：29%"
+                                src="themes / images / products / large / f1.jpg" alt="" /> </a>
+                        <a href="themes/images/products/large/f2.jpg"> <img style="width：29%"
+                                src="themes / images / products / large / f2.jpg" alt="" /> </a>
+                        <a href="themes/images/products/large/f3.jpg"> <img style="width：29%"
+                                src="themes / images / products / large / f3.jpg" alt="" /> </a>
+                    </div>
+                    <div class="item">
+                        <a href="themes/images/products/large/f3.jpg"> <img style="width：29%"
+                                src="themes / images / products / large / f3.jpg" alt="" /> </a>
+                        <a href="themes/images/products/large/f1.jpg"> <img style="width：29%"
+                                src="themes / images / products / large / f1.jpg" alt="" /> </a>
+                        <a href="themes/images/products/large/f2.jpg"> <img style="width：29%"
+                                src="themes / images / products / large / f2.jpg" alt="" /> </a>
+                    </div>
+                </div>
+                <!-- <a class="left carousel-control" href="#myCarousel" data-slide="prev"> ‹</a>
+                    <a class="right carousel-control" href="#myCarousel" data-slide="next">› </a>
+                -->
+            </div>
+
+            <div class="btn-toolbar">
+                <div class="btn-group">
+                    <span class="btn"> <i class="icon-envelope"> </i> </span>
+                    <span class="btn"> <i class="icon-print"> </i> </span>
+                    <span class="btn"> <i class="icon-zoom-in"> </i> </span>
+                    <span class="btn"> <i class="icon-star"> </i> </span>
+                    <span class="btn"> <i class="icon-thumbs-up"> </i> </span>
+                    <span class="btn"> <i class="icon-thumbs-down"> </i> </span>
+                </div>
+            </div>
+        </div>
+        <div class="span6">
+            <h3> {{object.name}} </h3>
+            <small> {{object.description}} </small>
+            <hr class="soft" />
+            <form class="form-horizo​​ntal qtyFrm">
+                <div class="control-group">
+                    <label class="control-label"> <span> $ {{object.price}} </span> </label>
+                    <div class="controls">
+                        <input type="number" class="span1" placeholder="Qty。" />
+                        <button type="submit" class="btn btn-large btn-primary pull-right">追加
+                            cart <i class="icon-shopping-cart"> </i> </button>
+                    </div>
+                </div>
+            </form>
+
+            <hr class="soft" />
+            <h4> 100個の在庫あり</h4>
+            <form class="form-horizo​​ntal qtyFrm pull-right">
+                <div class="control-group">
+                    <label class="control-label"> <span>色</span> </label>
+                    <div class="controls">
+                        <select class="span2">
+                            <option>黒</option>
+                            <option>赤</option>
+                            <option>青</option>
+                            <option>ブラウン</option>
+                        </select>
+                    </div>
+                </div>
+            </form>
+            <hr class="soft clr" />
+            <p>
+                14メガピクセル。18.0 x光学ズーム。3.0インチLCDスクリーン。フルHD写真と1280 x
+                720p HDムービーキャプチャ。解像度を下げたISO感度ISO6400。
+                トラッキングオートフォーカス。モーションパノラマモード。Blinkによる顔検出テクノロジー
+                検出と笑顔と撮影モード。4 x単三電池は含まれていません。WxDxH 110.2
+                ×81.4x73.4mm。
+                重量0.341kg（バッテリーとメモリーカードを除く）。重量0.437kg（含む
+                バッテリーとメモリーカード）。
+
+            </p>
+            <a class="btn btn-small pull-right" href="#detail">詳細</​​a>
+                <br class="clr" />
+                <a href="#" name="detail"> </a>
+                <hr class="soft" />
+        </div>
+
+        <div class="span9">
+            <ul id="productDetail" class="nav nav-tabs">
+                <li class="active"> <a href="#home" data-toggle="tab">製品の詳細</a> </li>
+                <li> <a href="#profile" data-toggle="tab">関連製品</a> </li>
+            </ul>
+            <div id="myTabContent" class="tab-content">
+                <div class="tab-pane fade in in" id="home">
+                    <h4>製品情報</h4>
+                    <table class="table table-bordered">
+                        <tbody>
+                            <tr class="techSpecRow">
+                                <th colspan="2">製品の詳細</th>
+                            </tr>
+                            <tr class="techSpecRow">
+                                <td class="techSpecTD1">ブランド：</td>
+                                <td class="techSpecTD2">富士フイルム</td>
+                            </tr>
+                            <tr class="techSpecRow">
+                                <td class="techSpecTD1">モデル：</td>
+                                <td class="techSpecTD2"> FinePix S2950HD </td>
+                            </tr>
+                            <tr class="techSpecRow">
+                                <td class="techSpecTD1">リリース日：</td>
+                                <td class="techSpecTD2"> 2011-01-28 </td>
+                            </tr>
+                            <tr class="techSpecRow">
+                                <td class="techSpecTD1">ディメンション：</td>
+                                <td class="techSpecTD2"> 5.50 "hx 5.50" wx 2.00 "l、0.75ポンド
+                                </td>
+                            </tr>
+                            <tr class="techSpecRow">
+                                <td class="techSpecTD1">表示サイズ：</td>
+                                <td class="techSpecTD2"> 3 </td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h5>機能</h5>
+                    <p>
+                        14メガピクセル。18.0 x光学ズーム。3.0インチLCDスクリーン。フルHD写真と
+                        1280 x 720p HDムービーキャプチャ。解像度を下げたISO感度ISO6400。
+                        トラッキングオートフォーカス。モーションパノラマモード。顔検出テクノロジー
+                        まばたき検出と笑顔と撮影モード。4 x単三電池は含まれていません。
+                        WxDxH 110.2×81.4x73.4mm 重量0.341kg（バッテリーとメモリーを除く）
+                        カード）。重量0.437kg（バッテリーとメモリーカードを含む）。<br />
+                        OND363338
+                    </p>
+
+                    <h4>編集レビュー</h4>
+                    <h5>メーカーの説明</h5>
+                    <p>
+                        寛大な18倍のフジノン光学ズームレンズで、S2950は本当に
+                        特に、14メガピクセルのセンサー、3.0インチの大型LCDと組み合わせた場合
+                        画面および720p HD（30fps）ムービーキャプチャ。
+                    </p>
+
+                    <h5>電動のフジノン18倍ズームレンズ</h5>
+                    <p>
+                        S2950は、印象的な28mm〜504mm *の高精度フジノンオプティカル
+                        ズームレンズ。電動ズームレバーで簡単に操作でき、
+                        ズーム範囲は、あなたがいるときでも、すべての詳細をキャプチャできることを意味します
+                        かなりの距離。ビデオ中にズームを操作することもできます
+                        撮影。かさばるD-SLRとは異なり、ブリッジカメラは優れた汎用性を実現
+                        レンズの袋を運ぶ手間をかけずにズームの。
+                    </p>
+                    <h5>印象的なパノラマ</h5>
+                    <p>
+                        使いやすいパノラマ撮影モードを使用すると、
+                        S2950、しかしあなたの基本的なスキル、そしてあなたが危険にさらさないことを保証
+                        不均一な風景や不安定な地平線を撮影します。カメラで撮影できます
+                        自動的にリリースする便利なツールを使用した3つの連続したショット
+                        画像が完全に揃うとシャッターが切れ、ショットがシームレスにステッチされます
+                        カメラ内で一緒に。それはとても簡単で、結果は印象的です。
+                    </p>
+
+                    <h5>シャープで鮮明なショット</h5>
+                    <p>
+                        最長のズーム設定でも、最も困難な照明でも
+                        S2950は、非常に鮮明な結果をもたらすことができます。その
+                        機械的に安定した1/2 3 "、14メガピクセルCCDセンサー、および高ISO
+                        感度設定、富士フイルムのデュアル画像安定化技術
+                        組み合わせて、握手と被写体の両方のぼかし効果を減らします
+                        素晴らしい写真を提供する動き。
+                    </p>
+                </div>
+                <div class="tab-pane fade" id="profile">
+                    <div id="myTab" class="pull-right">
+                        <a href="#listView" data-toggle="tab"> <span class="btn btn-large"> <i class="icon-list"> </i>
+                            </span> </a>
+                        <a href="#blockView" data-toggle="tab"> <span class="btn btn-large btn-primary"> <i
+                                    class="icon-th-large"> </i> </span> </a>
+                    </div>
+                    <br class="clr" />
+                    <hr class="soft" />
+                    <div class="tab-content">
+                        <div class="tab-pane" id="listView">
+                            <div class="row">
+                                <div class="span2">
+                                    <img src="{% static "themes/images/products/4.jpg" %}" alt="" />
+                                </div>
+                                <div class="span4">
+                                    <h3>新規| 利用可能</h3>
+                                    <hr class="soft" />
+                                    <h5>製品名</h5>
+                                    <p>
+                                        現在、ランジェリー業界は最も成功している
+                                        ビジネス分野。常に最新の情報にアクセスします。
+                                        ファッションの傾向-
+                                        それが私たちの商品がとても人気がある理由です
+                                    </p>
+                                    <a class="btn btn-small pull-right" href="product_details.html">詳細を表示</a>
+                                    <br class="clr" />
+                                </div>
+                                <div class="span3 alignR">
+                                    <form class="form-horizo​​ntal qtyFrm">
+                                        <h3> $ 222.00 </h3>
+                                        <label class="checkbox">
+                                            <input type="checkbox">製品を比較対象に追加します
+                                        </label> <br />
+                                        <div class="btn-group">
+                                            <a href="product_details.html" class="btn btn-large btn-primary">
+                                                <iに追加 class="icon-shopping-cart"> </i>
+                                            </a>
+                                            <a href="product_details.html" class="btn btn-large"> <i
+                                                    class="icon-zoom-in"> </i> </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <hr class="soft" />
+                            <div class="row">
+                                <div class="span2">
+                                    <img src="{% static "themes/images/products/5.jpg" %}" alt="" />
+                                </div>
+                                <div class="span4">
+                                    <h3>新規| 利用可能</h3>
+                                    <hr class="soft" />
+                                    <h5>製品名</h5>
+                                    <p>
+                                        現在、ランジェリー業界は最も成功している
+                                        ビジネス分野。常に最新の情報にアクセスします。
+                                        ファッションの傾向-
+                                        それが私たちの商品がとても人気がある理由です
+                                    </p>
+                                    <a class="btn btn-small pull-right" href="product_details.html">詳細を表示</a>
+                                    <br class="clr" />
+                                </div>
+                                <div class="span3 alignR">
+                                    <form class="form-horizo​​ntal qtyFrm">
+                                        <h3> $ 222.00 </h3>
+                                        <label class="checkbox">
+                                            <input type="checkbox">製品を比較対象に追加します
+                                        </label> <br />
+                                        <div class="btn-group">
+                                            <a href="product_details.html" class="btn btn-large btn-primary">
+                                                <i class="icon-shopping-cart"> </i>
+                                            </a>
+                                            <a href="product_details.html" class="btn btn-large"> <i
+                                                    class="icon-zoom-in"> </i> </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <hr class="soft" />
+                            <div class="row">
+                                <div class="span2">
+                                    <img src="{% static "themes/images/products/6.jpg" %}" alt="" />
+                                </div>
+                                <div class="span4">
+                                    <h3>新規| 利用可能</h3>
+                                    <hr class="soft" />
+                                    <h5>製品名</h5>
+                                    <p>
+                                        現在、ランジェリー業界は最も成功している
+                                        ビジネス分野。常に最新の情報にアクセスします。
+                                        ファッションの傾向-
+                                        それが私たちの商品がとても人気がある理由です
+                                    </p>
+                                    <a class="btn btn-small pull-right" href="product_details.html">詳細を表示</a>
+                                    <br class="clr" />
+                                </div>
+                                <div class="span3 alignR">
+                                    <form class="form-horizo​​ntal qtyFrm">
+                                        <h3> $ 222.00 </h3>
+                                        <label class="checkbox">
+                                            <input type="checkbox">製品を比較対象に追加します
+                                        </label> <br />
+                                        <div class="btn-group">
+                                            <a href="product_details.html" class="btn btn-large btn-primary">
+                                                <iに追加 class="icon-shopping-cart"> </i>
+                                            </a>
+                                            <a href="product_details.html" class="btn btn-large"> <i
+                                                    class="icon-zoom-in"> </i> </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <hr class="soft" />
+                            <div class="row">
+                                <div class="span2">
+                                    <img src="{% static "themes/images/products/7.jpg" %}" alt="" />
+                                </div>
+                                <div class="span4">
+                                    <h3>新規| 利用可能</h3>
+                                    <hr class="soft" />
+                                    <h5>製品名</h5>
+                                    <p>
+                                        現在、ランジェリー業界は最も成功している
+                                        ビジネス分野。常に最新の情報にアクセスします。
+                                        ファッションの傾向-
+                                        それが私たちの商品がとても人気がある理由です
+                                    </p>
+                                    <a class="btn btn-small pull-right" href="product_details.html">詳細を表示</a>
+                                    <br class="clr" />
+                                </div>
+                                <div class="span3 alignR">
+                                    <form class="form-horizo​​ntal qtyFrm">
+                                        <h3> $ 222.00 </h3>
+                                        <label class="checkbox">
+                                            <input type="checkbox">製品を比較対象に追加します
+                                        </label> <br />
+                                        <div class="btn-group">
+                                            <a href="product_details.html" class="btn btn-large btn-primary">
+                                                <i class="icon-shopping-cart"> </i>
+                                            </a>
+                                            <a href="product_details.html" class="btn btn-large"> <i
+                                                    class="icon-zoom-in"> </i> </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+
+                            <hr class="soft" />
+                            <div class="row">
+                                <div class="span2">
+                                    <img src="{% static "themes/images/products/8.jpg" %}" alt="" />
+                                </div>
+                                <div class="span4">
+                                    <h3>新規| 利用可能</h3>
+                                    <hr class="soft" />
+                                    <h5>製品名</h5>
+                                    <p>
+                                        現在、ランジェリー業界は最も成功している
+                                        ビジネス分野。常に最新の情報にアクセスします。
+                                        ファッションの傾向-
+                                        それが私たちの商品がとても人気がある理由です
+                                    </p>
+                                    <a class="btn btn-small pull-right" href="product_details.html">詳細を表示</a>
+                                    <br class="clr" />
+                                </div>
+                                <div class="span3 alignR">
+                                    <form class="form-horizo​​ntal qtyFrm">
+                                        <h3> $ 222.00 </h3>
+                                        <label class="checkbox">
+                                            <input type="checkbox">製品を比較対象に追加します
+                                        </label> <br />
+                                        <div class="btn-group">
+                                            <a href="product_details.html" class="btn btn-large btn-primary">
+                                                <i class="icon-shopping-cart"> </i>
+                                            </a>
+                                            <a href="product_details.html" class="btn btn-large"> <i
+                                                    class="icon-zoom-in"> </i> </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <hr class="soft" />
+                            <div class="row">
+                                <div class="span2">
+                                    <img src="{% static "themes/images/products/9.jpg" %}" alt="" />
+                                </div>
+                                <div class="span4">
+                                    <h3>新規| 利用可能</h3>
+                                    <hr class="soft" />
+                                    <h5>製品名</h5>
+                                    <p>
+                                        現在、ランジェリー業界は最も成功している
+                                        ビジネス分野。常に最新の情報にアクセスします。
+                                        ファッションの傾向-
+                                        それが私たちの商品がとても人気がある理由です
+                                    </p>
+                                    <a class="btn btn-small pull-right" href="product_details.html">詳細を表示</a>
+                                    <br class="clr" />
+                                </div>
+                                <div class="span3 alignR">
+                                    <form class="form-horizo​​ntal qtyFrm">
+                                        <h3> $ 222.00 </h3>
+                                        <label class="checkbox">
+                                            <input type="checkbox">製品を比較対象に追加します
+                                        </label> <br />
+                                        <div class="btn-group">
+                                            <a href="product_details.html" class="btn btn-large btn-primary">
+                                                <i class="icon-shopping-cart"> </i>
+                                            </a>
+                                            <a href="product_details.html" class="btn btn-large"> <i
+                                                    class="icon-zoom-in"> </i> </a>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <hr class="soft" />
+                        </div>
+                        <div class="tab-pane active" id="blockView">
+                            <ul class="thumbnails">
+                                <li class="span3">
+                                    <div class="thumbnail">
+                                        <a href="product_details.html"> <img
+                                                src="{% static "themes/images/products/10.jpg" %}" alt="" /> </a>
+                                        <div class="caption">
+                                            <h5>マニキュア＆amp; ペディキュア</h5>
+                                            <p>
+                                                Lorem Ipsumは単なるダミーテキストです。
+                                            </p>
+                                            <h4 style="text-align：center"> <a class="btn" href="product_details.html">
+                                                    <i class="icon-zoom-in"> </i> </a> <a class="btn" href="＃">
+                                                    <i class="icon-shopping-cart"> </i>
+                                                </a> <a class="btn btn-primary" href="＃">＆euro; 222.00 </a> </h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="span3">
+                                    <div class="thumbnail">
+                                        <a href="product_details.html"> <img
+                                                src="{% static "themes/images/products/11.jpg" %}" alt="" /> </a>
+                                        <div class="caption">
+                                            <h5>マニキュア＆amp; ペディキュア</h5>
+                                            <p>
+                                                Lorem Ipsumは単なるダミーテキストです。
+                                            </p>
+                                            <h4 style="text-align：center"> <a class="btn" href="product_details.html">
+                                                    <i class="icon-zoom-in"> </i> </a> <a class="btn" href="＃">
+                                                    <i class="icon-shopping-cart"> </i>
+                                                </a> <a class="btn btn-primary" href="＃">＆euro; 222.00 </a> </h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="span3">
+                                    <div class="thumbnail">
+                                        <a href="product_details.html"> <img
+                                                src="{% static "themes/images/products/12.jpg" %}" alt="" /> </a>
+                                        <div class="caption">
+                                            <h5>マニキュア＆amp; ペディキュア</h5>
+                                            <p>
+                                                Lorem Ipsumは単なるダミーテキストです。
+                                            </p>
+                                            <h4 style="text-align：center"> <a class="btn" href="product_details.html">
+                                                    <i class="icon-zoom-in"> </i> </a> <a class="btn" href="＃">
+                                                    <i class="icon-shopping-cart"> </i>
+                                                </a> <a class="btn btn-primary" href="＃">＆euro; 222.00 </a> </h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="span3">
+                                    <div class="thumbnail">
+                                        <a href="product_details.html"> <img
+                                                src="{% static "themes/images/products/13.jpg" %}" alt="" /> </a>
+                                        <div class="caption">
+                                            <h5>マニキュア＆amp; ペディキュア</h5>
+                                            <p>
+                                                Lorem Ipsumは単なるダミーテキストです。
+                                            </p>
+                                            <h4 style="text-align：center"> <a class="btn" href="product_details.html">
+                                                    <i class="icon-zoom-in"> </i> </a> <a class="btn" href="＃">
+                                                    <i class="icon-shopping-cart"> </i>
+                                                </a> <a class="btn btn-primary" href="＃">＆euro; 222.00 </a> </h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="span3">
+                                    <div class="thumbnail">
+                                        <a href="product_details.html"> <img
+                                                src="{% static "themes/images/products/1.jpg" %}" alt="" /> </a>
+                                        <div class="caption">
+                                            <h5>マニキュア＆amp; ペディキュア</h5>
+                                            <p>
+                                                Lorem Ipsumは単なるダミーテキストです。
+                                            </p>
+                                            <h4 style="text-align：center"> <a class="btn" href="product_details.html">
+                                                    <i class="icon-zoom-in"> </i> </a> <a class="btn" href="＃">
+                                                    <i class="icon-shopping-cart"> </i>
+                                                </a> <a class="btn btn-primary" href="＃">＆euro; 222.00 </a> </h4>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li class="span3">
+                                    <div class="thumbnail">
+                                        <a href="product_details.html"> <img
+                                                src="{% static "themes/images/products/2.jpg" %}" alt="" /> </a>
+                                        <div class="caption">
+                                            <h5>マニキュア＆amp; ペディキュア</h5>
+                                            <p>
+                                                Lorem Ipsumは単なるダミーテキストです。
+                                            </p>
+                                            <h4 style="text-align：center"> <a class="btn" href="product_details.html">
+                                                    <i class="icon-zoom-in"> </i> </a> <a class="btn" href="＃">
+                                                    <i class="icon-shopping-cart"> </i>
+                                                </a> <a class="btn btn-primary" href="＃">＆euro; 222.00 </a> </h4>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <hr class="soft" />
+                        </div>
+                    </div>
+                    <br class="clr">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
